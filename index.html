@@ -27,7 +27,8 @@
     }
   </style>
   <body>
-    <h1>1번째 고양이 가라사대2</h1>
+    <div id="app"></div>
+    <!-- <h1>1번째 고양이 가라사대2</h1>
     <form>
       <input type="text" name="name" placeholder="영어 대사를 입력해주세요" />
       <button type="submit">생성</button>
@@ -59,9 +60,27 @@
           alt="고양이"
         />
       </li>
-    </ul>
-    <script>
+    </ul> -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
       console.log("야옹");
+
+      const catItem = (
+        <li>
+          <img src="https://cataas.com/cat/HSENVDU4ZMqy7KQ0/says/react" />
+        </li>
+      );
+      const 여기다가그려 = document.querySelector("#app");
+
+      ReactDOM.render(catItem, 여기다가그려);
     </script>
   </body>
 </html>
