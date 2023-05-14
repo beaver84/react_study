@@ -59,10 +59,21 @@
       }
 
       const MainCard = ({ img }) => {
+        function handleHeartClick() {
+          console.log("하트 눌렀음");
+        }
+        function handleHeartMouseOver() {
+          console.log("하트 스쳐 지나감");
+        }
         return (
           <div className="main-card">
             <img src={img} alt="고양이" width="400" />
-            <button>🤍</button>
+            <button
+              onClick={handleHeartClick}
+              onMouseOver={handleHeartMouseOver}
+            >
+              🤍
+            </button>
           </div>
         );
       };
@@ -71,9 +82,14 @@
         return <h1>{props.children}</h1>;
       };
 
-      const CatSays = () => {
+      const Form = () => {
+        function handleFormSubmit(event) {
+          event.preventDefault();
+          console.log("폼 전송됨");
+        }
+
         return (
-          <form>
+          <form onSubmit={handleFormSubmit}>
             <input
               type="text"
               name="name"
@@ -87,7 +103,7 @@
       const app = (
         <div>
           <Title>1번쨰 고양이 가라사대</Title>
-          <CatSays />
+          <Form />
           <MainCard img="https://cataas.com/cat/HSENVDU4ZMqy7KQ0/says/react" />
           <Favorites />
         </div>
